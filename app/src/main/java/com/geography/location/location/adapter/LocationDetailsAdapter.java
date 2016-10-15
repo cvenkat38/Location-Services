@@ -45,7 +45,7 @@ public class LocationDetailsAdapter extends RecyclerView.Adapter<LocationDetails
         LocationDetails locationDetails=locationDetailsList.get(position);
         holder.latitude.setText(context.getResources().getString(R.string.latitude)+" -"+locationDetails.getLatitude());
         holder.longitude.setText(context.getResources().getString(R.string.longitude)+" - "+locationDetails.getLongitude());
-        holder.time.setText(context.getResources().getString(R.string.longitude)+" - "+locationDetails.getTime());
+        holder.time.setText(context.getResources().getString(R.string.time)+" - "+locationDetails.getTime());
 
     }
 
