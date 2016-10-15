@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Location</string>
 
+    <string name="no_list_items">No List Items</string>
     <string name="location_not_enabled">Please enable your location</string>
     <string name="open_location_settings">open location settings</string>
     <string name="cancel">cancel</string>

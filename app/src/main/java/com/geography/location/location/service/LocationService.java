@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.SystemClock;
+import android.util.Log;
 
 
 import com.geography.location.location.asynctask.LocationUpdateAsyncTask;
@@ -20,7 +21,7 @@ import com.geography.location.location.asynctask.LocationUpdateAsyncTask;
 public class LocationService extends Service {
 
     /*time difference is in milliseconds*/
-    private int TIME_DIFFERENCE_TO_RESTART_SERVICE = 3*60*1000;
+    private int TIME_DIFFERENCE_TO_RESTART_SERVICE = 120000;
     private String TAG=LocationService.class.getSimpleName();
 
     @Override
@@ -31,7 +32,7 @@ public class LocationService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
+        Log.d(TAG,"in satrt ");
         new LocationUpdateAsyncTask(getApplicationContext()).execute();
         startThread();
         return START_STICKY;
@@ -62,6 +63,13 @@ public class LocationService extends Service {
     public void onCreate() {
         // TODO Auto-generated method stub
         super.onCreate();
+        Log.d(TAG,"in create");
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG,"in destory ");
     }
 }
